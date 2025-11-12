@@ -109,7 +109,7 @@ class Komik extends Produk implements InfoProduk {
 
     public function getInfoProduk() {
         // buat renceana output dengan metode ambil Method dari Parent
-        $str = "Komik : " . parent::getInfo() . " - {$this->jmlHalaman} Halaman.";
+        $str = "Komik : " . $this->getInfo() . " - {$this->jmlHalaman} Halaman.";
         // kembalikan nilai $str agar dapat diterima oleh fungsi lain
         return $str;
     }
@@ -139,7 +139,7 @@ class Game extends Produk implements InfoProduk {
     
     public function getInfoProduk() {
         // buat renceana output dengan metode ambil Method dari Parent
-        $str = "Game : " . parent::getInfo() . " ~ {$this->waktuMain} Jam.";
+        $str = "Game : " . $this->getInfo() . " ~ {$this->waktuMain} Jam.";
         // kembalikan nilai $str agar dapat diterima oleh fungsi lain
         return $str;
     }
@@ -173,17 +173,17 @@ class CetakInfoProduk {
 // instance kelas Produk
 // $produk = new Produk(); // jika instance dibuat untuk kelas abstrak Produk maka akan menghasilkan error
 
-// // instance produknya
-// $produk1 = new Komik("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100);
-// $produk2 = new Game("Uncharted", "Neil Druckman", "Sony Computer", 250000, 50);
+// instance produknya
+$produk1 = new Komik("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100);
+$produk2 = new Game("Uncharted", "Neil Druckman", "Sony Computer", 250000, 50);
 
-// // intance cetakProduk 
-// $cetakProduk = new CetakInfoProduk();
-// // tambahkan produk yang dituju
-// $cetakProduk->tambahProduk( $produk1 );
-// $cetakProduk->tambahProduk( $produk2 );
+// intance cetakProduk 
+$cetakProduk = new CetakInfoProduk();
+// tambahkan produk yang dituju
+$cetakProduk->tambahProduk( $produk1 );
+$cetakProduk->tambahProduk( $produk2 );
 
-// echo $cetakProduk->cetak();  
+echo $cetakProduk->cetak();  
 
 
 
